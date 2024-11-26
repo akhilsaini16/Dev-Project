@@ -1,0 +1,11 @@
+.DS_Store
+
+venv
+
+__pycache__
+
+.env
+
+index.html
+
+index2.html

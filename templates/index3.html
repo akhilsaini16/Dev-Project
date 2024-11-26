@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Code Editor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/dracula.min.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+    <div class="container">
+        <h2>Create Test Cases</h2>
+        <label for="function-count">How many functions do you wish to create test cases for?</label>
+        <select id="function-count" onchange="createInputFields()">
+            {% for i in range(1, 7) %}
+                <option value="{{ i }}">{{ i }}</option>
+            {% endfor %}
+        </select>
+        
+        <!-- Container for dynamically added input fields -->
+        <div id="input-container"></div>
+
+        <!-- Submit button -->
+        <button type="button" onclick="handleSubmit()">Submit</button>
+    </div>
+
+    <!-- Include CodeMirror Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/addon/lint/lint.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/addon/lint/python-lint.min.js"></script>
+
+    <script src="static/js/main.js"></script>
+    <script src="static/js/submitHandler.js"></script>
+</body>
+
+
+</html>
